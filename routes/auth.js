@@ -24,7 +24,7 @@ route.get('/login',(req,res)=>{
 
 })
 
-router.post('/login', (req,res,next)=>{
+route.post('/login', (req,res,next)=>{
 	passport.authenticate('local',
 	{
 	successRedirect: '/welcome',

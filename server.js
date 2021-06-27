@@ -12,16 +12,22 @@ require('./db/db')
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 
+app.use(express.urlencoded({ extended: false }))
 
 
-app.use(express.cookieParser());
-app.use(express.bodyParser());
-app.use(express.session({ secret: 'keyboard cat' }));
+// Express session
+app.use(
+  session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+  })
+);
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+
+
 
 
 app.use('/' , authRoute)
