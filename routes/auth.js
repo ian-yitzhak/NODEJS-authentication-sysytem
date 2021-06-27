@@ -1,6 +1,8 @@
 const express = require('express')
+const passport = require('passport');
 const User = require('../models/User')
 const route = express.Router()
+
 
 route.get('/register',(req,res)=>{
 	res.render('register')
@@ -22,12 +24,15 @@ route.get('/login',(req,res)=>{
 
 })
 
-router.post('/login', passport.authenticate('local', { 
+router.post('/login', (req,res,next)=>{
+	passport.authenticate('local',
+	{
+	successRedirect: '/welcome',
+    failureRedirect: '/login',
+    failureFlash: true
 
-	                                                successRedirect: '/',
-                                                    failureRedirect: '/login' 
-                                                })
-);
+	}) (req,res,next);
+})
 
 route.post('/register',async (req,res)=>{
 	const user = new User({
