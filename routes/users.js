@@ -16,7 +16,7 @@ route.post("/sign-up", (req, res, next) => {
     if (err) { 
       return next(err);
     }
-    res.redirect("/log-in");
+    res.redirect("/user/log-in");
   });
 });
 

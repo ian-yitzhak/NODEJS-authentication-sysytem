@@ -4,7 +4,7 @@ module.exports = {
       return next();
     }
     
-    res.redirect('/log-in');
+    res.redirect('/user/log-in');
   },
   forwardAuthenticated: function(req, res, next) {
     if (!req.isAuthenticated()) {
