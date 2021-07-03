@@ -1,6 +1,6 @@
 body {
     color: #fff;
-    background: #19aa8d;
+    background: DodgerBlue;
     font-family: 'Roboto', sans-serif;
   }
   .form-control, .form-control:focus, .input-group-addon {
@@ -51,12 +51,12 @@ body {
     .signup-form .btn{        
         font-size: 16px;
         font-weight: bold;
-    background: #19aa8d;
+    background:Orange;
     border: none;
     min-width: 140px;
     }
   .signup-form .btn:hover, .signup-form .btn:focus {
-    background: #179b81;
+    background: blue;
         outline: none;
   }
   .signup-form a {
