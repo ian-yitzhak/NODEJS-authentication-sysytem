@@ -8,6 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="/index.css">
+
     
   </head>
   <body>
@@ -15,30 +17,37 @@
 
      <% if (user) {%>
     <div class="alert alert-primary" role="alert">
- welcome <h1> <%= user.username %></h1>
+  <h1 class="text-center"> Hi <span style="color:red;"><%= user.username %> </span> This is your Profile</h1>
 </div> 
-    <a href="/log-out" class="btn btn-danger">LOG OUT</a>  <a href="/" class="btn btn-primary">HOME</a>
+
+<div class="text-center">
+    <a href="/user/log-out" class="btn btn-danger">LOG OUT</a>  <a href="/" class="btn btn-primary">HOME</a> </div>
   <% } else { %>
 
    <h1>please log in</h1>
 
-
-    <div class="text-center" style="width: 500px;">
-  <form action="/log-in" method="POST" autocomplete="off">
-
-  <div class="form-group">
-    <label for="exampleInputName">Name</label>
-    <input type="text" name="username" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="enter name">
+<div class="d-flex justify-content-center">
+      <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+      </div>
+        </div>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+      </div>
+        </div>
     
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
+        
+    <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+        </div>
+    </form>
   
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-    </div>
+</div>
+
 
     <%}%>
    

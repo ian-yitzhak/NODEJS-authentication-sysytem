@@ -33,14 +33,14 @@ route.get('/log-in', (req,res)=>{
 route.post(
   "/log-in",
   passport.authenticate("local", {
-    successRedirect: "/welcome",
-    failureRedirect: "/"
+    successRedirect: "/user/welcome",
+    failureRedirect: "/user/login"
   })
 );
 
 route.get("/log-out", (req, res) => {
   req.logout();
-  res.redirect("/log-in");
+  res.redirect("/user/log-in");
 });
 
 
